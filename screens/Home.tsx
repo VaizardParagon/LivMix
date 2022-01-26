@@ -10,12 +10,12 @@ const secondCategory = categories.items[1];
 const thirdCategory = categories.items[2];
 const fourthCategory = categories.items[3];
 const fifthCategory = categories.items[4];
-export default function TabtwoScreen({ navigation }: 
+export default function TabOneScreen({ navigation }: 
   RootTabScreenProps<'Home'>) {
   return (
     
     <View style={styles.container}>
-      <Text style={styles.title}>Coming this November</Text>  
+      <Text style={styles.title}>Popular on Netflix</Text>  
       <FlatList
         data={firstCategory.movies }
         renderItem={({item}) => (
@@ -24,7 +24,7 @@ export default function TabtwoScreen({ navigation }:
           horizontal
       />  
 
-      <Text style={styles.title}>Coming summer 2022</Text>  
+      <Text style={styles.title}>Trending Now</Text>  
       <FlatList
         data={secondCategory.movies }
         renderItem={({item}) => (
@@ -33,7 +33,7 @@ export default function TabtwoScreen({ navigation }:
           horizontal
       /> 
 
-      <Text style={styles.title}>Coming winter 2022</Text>  
+      <Text style={styles.title}>Latin American Movies & TV</Text>  
       <FlatList
         data={thirdCategory.movies }
         renderItem={({item}) => (
@@ -42,7 +42,7 @@ export default function TabtwoScreen({ navigation }:
           horizontal
       /> 
 
-<Text style={styles.title}>Coming Fall 2022</Text>  
+<Text style={styles.title}>Comedies</Text>  
       <FlatList
         data={fourthCategory.movies }
         renderItem={({item}) => (
@@ -51,7 +51,7 @@ export default function TabtwoScreen({ navigation }:
           horizontal
       /> 
 
-<Text style={styles.title}>Coming Spring</Text>  
+<Text style={styles.title}>Top 10</Text>  
       <FlatList
         data={fifthCategory.movies }
         renderItem={({item}) => (
