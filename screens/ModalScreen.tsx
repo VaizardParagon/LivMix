@@ -8,30 +8,30 @@ import {
   FlatList,
 } from "react-native";
 
-// get data from this URL!
+
 const movieURL = "https://reactnative.dev/movies.json";
 
 const App = () => {
-  // managing state with 'useState'
+  
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
   const [title, setTitle] = useState([]);
   const [description, setDescription] = useState([]);
 
-  // similar to 'componentDidMount', gets called once
+ 
   useEffect(() => {
     fetch(movieURL)
-      .then((response) => response.json()) // get response, convert to json
+      .then((response) => response.json()) // convert dito
       .then((json) => {
         setData(json.movies);
         setTitle(json.title);
         setDescription(json.description);
       })
-      .catch((error) => alert(error)) // display errors
-      .finally(() => setLoading(false)); // change loading state
+      .catch((error) => alert(error)) // parang try catch
+      .finally(() => setLoading(false)); // update loading state
   }, []);
 
-  // Also get call asynchronous function
+  
   async function getMoviesAsync() {
     try {
       let response = await fetch(movieURL);
@@ -47,14 +47,14 @@ const App = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      {/* While fetching show the indicator, else show response*/}
+      
       {isLoading ? (
         <ActivityIndicator />
       ) : (
         <View>
-          {/* Title from URL */}
+          
           <Text style={styles.title}>{title}</Text>
-          {/* Display each movie */}
+          
           <View style={{ borderBottomWidth: 1, marginBottom: 12 }}></View>
           <FlatList
             data={data}
@@ -67,7 +67,7 @@ const App = () => {
               </View>
             )}
           />
-          {/* Show the description */}
+          
           <Text style={styles.description}>{description}</Text>
         </View>
       )}
@@ -89,6 +89,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 32,
     fontWeight: "bold",
+    color: "white",
   },
   description: {
     textAlign: "center",
